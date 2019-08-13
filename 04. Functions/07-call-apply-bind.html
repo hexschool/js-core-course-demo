@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+    var myName = '真心鎮大冒險';
+
+    var family = {
+      myName: '小明家',
+    }
+
+    function fn(para1, para2) {
+      console.log(this, typeof this, para1, para2);
+    }
+
+    // call, apply, bind
+    // fn(1, 2);
+    // fn.call(family, 1, 2);
+    // fn.apply(family, [3, 4]);
+
+
+    // var fn2 = fn.bind(family, '小明');
+    // fn2(1);
+
+    // 進階觀念
+    // fn.call(1, '小明', '杰倫');
+    // fn.call('文字', '小明', '杰倫');
+    // fn.call(undefined, '小明', '杰倫');
+    
+    // (function() {
+    //   'use strict';
+
+    //   a = '小明';
+      
+    // })();
+
+    function callStrict(para1, para2) {
+      'use strict';
+      console.log(this, typeof this, para1, para2);
+    }
+    callStrict.call(1, '小明', '杰倫');
+    callStrict.call(undefined, '小明', '杰倫');
+
+    callStrict('小明', '杰倫');
+    // 簡易呼叫的 this 盡可能不要調用，它的本質其實是 undefined
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+
+    var myName = '全域';
+
+    // // This 的觀念
+    // var person = {
+    //   myName: '小明',
+    //   getName: function () {
+    //     return this.myName;
+    //   }
+    // }
+    // var getName = person.getName;
+    // console.log(getName());
+    // // 這個值為？
+
+    // bind 的其餘參數
+    // var obj = {
+    //   myName: '奇怪的函式',
+    //   fn: function (a, b, c) {
+    //     'use strict';
+    //     return this + ',' + a + ',' + b + ',' + c
+    //   }
+    // }
+    // var fnA = obj.fn;
+    // var fnB = fnA.bind(null, 0);
+    // console.log(fnB(1, 2));
+    // 問題 1:
+    // 全域,0,1,2
+    // 奇怪的函式,0,1,2
+    // null,0,1,2
+    // 奇怪的函式,1,2,undefined
+
+    // null,0,1,2 > 這個結果該如何修改程式碼
+
+    // This 的觀念
+    // var value = 'global';
+    // var foo = {
+    //   value: 'local',
+    //   bar: function () {
+    //     return this.value;
+    //   }
+    // }
+    
+    // var b = {};
+    // Object.defineProperty(b, 'a', {
+    //   value: undefined,
+    //   writable: false
+    // });
+    // b.a = 'a';
+    // console.log(b.a);
+
+    // // 直接執行
+    // console.log(foo.bar()); // local
+    // // 賦值
+    // console.log((b.a = foo.bar)());
+    // // or
+    // console.log((false || foo.bar)());
+
+    var arr = ['10', '2', '11'].map(function(item, i) {
+      return parseInt(item, i); // 3, 2
+    });
+    // var arr = ['1', '2', '3'].map(function(item, i) {
+    //   console.log(item, i);
+    //   return parseInt(item, 10);
+    // });
+    console.log(arr);
+    // [1, 2, 3]
+    // [undefined, undefined, undefined]
+    // [1, NaN, NaN]
+    // [1, undefined, undefined]
+
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

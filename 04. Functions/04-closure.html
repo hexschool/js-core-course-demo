@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+    // 回想一下先前的函式記憶體釋放
+    // function randomString(length) {
+    //   var result = '';
+    //   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    //   var charactersLength = characters.length;
+    //   for (var i = 0; i < length; i++) {
+    //     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    //   }
+    //   return result;
+    // }
+    
+    // function getData() {
+    //   var demoData = [];
+    //   for (let i = 0; i < 1000; i++) {
+    //     demoData.push(randomString(1000))
+    //   }
+    //   setTimeout(function() {
+    //     demoData;
+    //   }, 10000);
+    // }
+    // getData();
+
+
+    function storeMoney() {
+      var money = 1000;
+      return function(price) {
+        money = money + price;
+        return money;
+      }
+    }
+    // console.log(storeMoney()(100));
+
+    var MingMoney = storeMoney();
+    // console.log(MingMoney);
+    console.log(MingMoney(100));
+    console.log(MingMoney(100));
+    console.log(MingMoney(100));
+    
+    var JayMoney = storeMoney();
+    console.log(JayMoney(1000));
+    console.log(JayMoney(1000));
+    console.log(JayMoney(1000));
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

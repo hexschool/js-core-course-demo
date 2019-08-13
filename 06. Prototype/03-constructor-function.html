@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+    // var Bibi = {
+    //   name: '比比',
+    //   color: '棕色',
+    //   size: '小',
+    //   bark: function () {
+    //     console.log(this.name + ' 吠叫');
+    //   }
+    // }
+
+    // var Pupu = {
+    //   name: '噗噗',
+    //   color: '白',
+    //   size: '大',
+    //   bark: function () {
+    //     console.log(this.name + ' 吠叫');
+    //   }
+    // }
+    
+    // 建構函式
+    function Dog(name, color, size) {
+      this.name = name;
+      this.color = color;
+      this.size = size;
+    }
+
+    var Bibi = new Dog('比比', '棕色', '小');
+    
+    var Pupu = new Dog('噗噗', '白', '大');
+    
+
+    console.dir(Dog);
+    Dog.prototype.bark = function() {
+      console.log(this.name + ' 吠叫');
+    }
+    console.log(Bibi, Pupu);
+    Bibi.bark();
+    Pupu.bark();
+
+    // __proto__ 物件上
+    // prototype 函式
+    console.log(Dog.prototype === Bibi.__proto__)
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

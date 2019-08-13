@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    var family = {
+      name: '小明家',
+      members: {
+        father: '老爸',
+        mom: '老媽',
+        ming: '小明'
+      },
+    }
+
+    // var newFamily = {};
+    // for (var key in family) {
+    //   // console.log(key, family[key]);
+    //   newFamily[key] = family[key];
+    // }
+    // newFamily.name = '杰倫家';
+    // console.log(family === newFamily)
+    // newFamily.members.ming = '大明';
+    // console.log(family, newFamily);
+    // // 淺層複製、shallow copy
+
+    // // jQuery
+    // var newFamily2 = jQuery.extend({}, family);
+
+    // // ES6
+    // var newFamily3 = Object.assign({}, family);
+
+    // 深層複製、deep copy
+    console.log(family, JSON.parse(JSON.stringify(family)));
+    var newFamily4 = JSON.parse(JSON.stringify(family));
+    newFamily4.name = '杰倫家';
+    newFamily4.members.ming = '大明';
+    console.log(family, newFamily4);
+    
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

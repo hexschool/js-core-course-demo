@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // var person = '小明';
+    // var person2 = person;
+    // person2 = '杰倫';
+    // console.log(person, person2);
+
+    // var person = {
+    //   name: '小明'
+    // }
+    // var person2 = person;
+    // person2.name = '杰倫';
+    // console.log(person, person2);
+    // console.log(person === person2);
+
+    // var family = {
+    //   name: '小明家',
+    //   members: {
+    //     father: '老爸',
+    //     mom: '老媽',
+    //     ming: '小明'
+    //   },
+    // };
+    // var member = family.members;
+    // member.ming = '大明'
+    // console.log(member, family.members);
+
+    // var a = { x: 1 };
+    // a.y = a;
+    // console.log(a);
+
+    var a = { x: 1 };
+    var b = a;
+    a.y = a = { x: 2 };
+    // 1. a = { x: 2 } 是一個運算式
+    // 2. a.y = a = { x: 2 } 同時執行的
+    // a.y 找的是原本的參考路徑
+    console.log(a.y);
+    console.log(b);
+    console.log(a === b.y);
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

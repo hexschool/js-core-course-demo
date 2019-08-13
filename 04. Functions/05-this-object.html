@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+    var myName = '真心鎮大冒險';
+
+    function callName() {
+      console.log(this, this.myName);
+    }
+    // callName();
+
+    // var family = {
+    //   myName: '小明家',
+    //   callName: callName
+    // }
+    // // family.callName();
+
+    // var family2 = {
+    //   myName: '杰倫家',
+    //   callName: callName
+    // }
+    // family2.callName();
+
+    // var family = {
+    //   myName: '小明家',
+    //   callName: callName,
+    //   Ming: {
+    //     myName: '小明',
+    //     callName: callName
+    //   }
+    // }
+    // family.callName();
+    // family.Ming.callName();
+
+    var family = {
+      myName: '小明家',
+      callName: function () {
+        console.log(this, this.myName);
+      }
+    }
+    family.callName();
+
+    var callName = family.callName;
+    callName(); // Simple Call
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

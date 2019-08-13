@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 動態型別 
+    // 執行階段才會賦予確立型別
+    var myName;
+    myName = '小明';
+
+    console.log(typeof myName);
+    console.log(typeof '小明');
+
+    // var num = 1;
+    // console.log(typeof num);
+    // num = '文字';
+    // console.log(typeof num);
+
+
+    // 顯性的轉換 Explicit conversion
+
+    // 隱性的轉換 Implicit conversion
+    var num = 1;
+    console.log(num, typeof num);
+    num = num + '';
+    console.log(num, typeof num);
+
+    num = num * 3;
+    console.log(num, typeof num);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

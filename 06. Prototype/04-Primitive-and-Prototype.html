@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+    // var a = 'a';
+    // console.log(a.toUpperCase());
+
+    // var b = new String('bcde');
+    // console.log(b);
+    // console.dir(String);
+
+    // String.prototype.lastText = function() {
+    //   return this[this.length - 1];
+    // }
+    // console.log(b.lastText());
+
+    // Number.prototype.secondPower = function() {
+    //   return this * this;
+    // }
+    // var num = 5;
+    // console.log(num.secondPower());
+
+    var date = new Date();
+    console.log(date);
+    console.dir(Date);
+    Date.prototype.getFullDate = function() {
+      var dd = String(this.getDate());
+      var mm = String(this.getMonth() + 1);
+      var yyyy = this.getFullYear();
+
+      var today = yyyy + '/' + mm + '/' + dd;
+      return today;
+    }
+    console.log(date.getFullDate());
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

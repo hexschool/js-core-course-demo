@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 01
+    function eatBreakfast() {
+      console.log('吃早餐');
+    }
+
+    function washingPlate() {
+      console.log('洗餐盤');
+    }
+
+    function callSomeone(someone) {
+      console.log('打給' + someone)
+      setTimeout(function () {
+        console.log(someone + '回電');
+      }, 0);
+    }
+
+    function doWork() {
+      var auntie = '漂亮阿姨';
+      eatBreakfast();
+      callSomeone(auntie);
+      washingPlate();
+    }
+    doWork();
+  </script>
+</head>
+
+<body>
+  <p>點擊此段文字</p>
+  <script>
+  // 02
+  function clickThis() {
+    console.log('click');
+  }
+  var dom = document.querySelector('p');
+  dom.addEventListener('click', clickThis, false);
+  </script>
+</body>
+
+</html>

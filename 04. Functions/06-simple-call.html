@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+    var myName = '真心鎮大冒險';
+
+    function callName() {
+      console.log(this, this.myName);
+    }
+    // callName();
+    // 盡可能不要使用 simple 的 this
+
+    // IIFE
+    // (function () {
+    //   console.log(this.myName);
+    //   function callSomeone() {
+    //     console.log(this.myName);
+    //   }
+    //   callSomeone();
+    //   // window
+    // })();
+
+    // function easyCard(base) {
+    //   var money = base;
+    //   var name = '悠遊卡';
+    //   return function (update) {
+    //     money = money + update;
+    //     console.log(this.myName, money);
+    //   }
+    // }
+    // var MingEasyCard = easyCard(100);
+    // MingEasyCard(10);
+
+    // callback
+    // function myEasyCard(callback) {
+    //   var money = 100
+    //   return callback(money)
+    // }
+    // myEasyCard(function (money) {
+    //   console.log(this.myName, money + 100)
+    // });
+
+    // var a = [1, 2, 3];
+    // a.forEach(function(i) {
+    //   console.log(this.myName, i);
+    // })
+
+    var family = {
+      myName: '小明家',
+      callName: function () {
+        var self = this; // vm, that
+        setTimeout(function () {
+          console.log(self.myName);
+        }, 1000);
+      }
+    }
+    family.callName();
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

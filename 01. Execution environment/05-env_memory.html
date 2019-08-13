@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function randomString(length) {
+      var result = '';
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      var charactersLength = characters.length;
+      for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      return result;
+    }
+
+    // 範例程式碼 1
+    // var demoData = [];
+    // function getData() {
+    //   for (let i = 0; i < 1000; i++) {
+    //     demoData.push(randomString(5000))
+    //   }
+    // }
+    // // getData()
+    // console.log(demoData)
+
+    // 範例程式碼 2
+    function getData() {
+      var demoData = [];
+      for (var i = 0; i < 1000; i++) {
+        demoData.push(randomString(5000))
+      }
+      console.log(demoData); // 注意：Chrome console 中的行為也會需要記憶體
+    }
+    getData()
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

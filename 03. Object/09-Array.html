@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script>
+    var newArray = [
+      1,
+      '文字',
+      true,
+      {
+        name: '小明'
+      }
+    ];
+    
+    newArray.push(5);
+    newArray.name = '小明';
+    newArray[5] = '杰倫';
+    newArray[7] = '漂亮阿姨';
+    console.log(newArray);
+
+    // for (var i = 0; i < newArray.length; i ++) {
+    //   console.log(newArray[i])
+    // }
+
+    newArray.forEach(function(item) {
+      console.log(item);
+      
+    })
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

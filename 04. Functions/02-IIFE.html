@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+  
+    // (function () {
+    //   console.log('立即函式', );
+    //   // 1. 立刻執行
+    //   // 2. 無法在函式外被再次執行
+    // })();
+    
+    // (function() {
+    //   var Ming = '小明';
+    //   console.log(Ming);
+    //   // 限制變數的作用域
+    // })();
+    // console.log(Ming);
+
+
+    // var whereMing = (function (where) {
+    //   console.log(where);
+    //   return where;
+    // })('小明在這');
+    // console.log(whereMing);
+    
+
+    (function(global) {
+      global.person = '小明';
+    })(window)
+    ;(function(c) {
+      console.log(person);
+      
+    })()
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

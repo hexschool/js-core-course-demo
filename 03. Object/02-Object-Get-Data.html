@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var family = {
+      name: '小明家',
+      deposit: 1000,
+      members: {
+        mom: '老媽',
+        ming: '小明'
+      },
+      '1': '1',
+      '$-小明家': '$-小明家 string',
+
+      callFamily: function() {
+        console.log('聯絡小明家');
+      }
+    };
+
+    console.log(family.name);
+    console.log(family.members.mom);
+
+    var a = 'name';
+    console.log(family['$-小明家']);
+
+    family.callFamily();
+    family['callFamily']();
+
+    family.dog = '小白';
+    family['kitten'] = '小貓';
+    family['$'] = 'money';
+    
+
+    delete family.deposit;
+    delete family['$'];
+    console.log(family);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

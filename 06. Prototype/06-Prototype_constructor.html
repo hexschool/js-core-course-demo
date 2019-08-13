@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+    function Animal(family) {
+      this.kingdom = '動物界';
+      this.family = family || '人科';
+    }
+    Animal.prototype.move = function () {
+      console.log(this.name + ' 移動');
+    }
+
+    function Dog(name, color, size) {
+      Animal.call(this, '狗科');
+      this.name = name;
+      this.color = color || '白色';
+      this.size = size || '小';
+    }
+    Dog.prototype = Object.create(Animal.prototype);
+    Dog.prototype.constructor = Dog;
+    Dog.prototype.bark = function () {
+      console.log(this.name + ' 吠叫');
+    }
+
+    var Bibi = new Dog('比比', '棕色', '小');
+
+    console.log(Bibi.__proto__ === Dog.prototype);
+    console.log(Bibi.__proto__.__proto__ === Animal.prototype);
+    console.log(Bibi.__proto__.__proto__.constructor === Animal);
+    console.log(Bibi.__proto__.__proto__.__proto__.__proto__ === null);
+    
+    // 為什麼函式可以使用 prototype
+    console.log(Dog.__proto__ === Function.prototype);
+    console.log(Animal.__proto__ === Function.prototype);
+    console.log(Object.__proto__ === Function.prototype);
+
+    console.log(Function.__proto__ === Function.prototype);
+    console.log(Function.__proto__.__proto__ === Object.prototype);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

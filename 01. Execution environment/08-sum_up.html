@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+</head>
+
+<body>
+  <p>點擊此段文字</p>
+
+  <script>
+  // 02 為何會出現以下錯誤
+  // function clickThis() {
+  //   console.log('click');
+  // }
+  // $('p').click(clickThis);
+
+  // 03 作用域觀念
+  // var parent = '老爸'
+  // function sayHi() {
+  //   var greeting = 'hi';
+  //   return greeting + ' ' + parent;
+  // }
+
+  // function doMorningWork() {
+  //   var parent = '老媽';
+  //   console.log(sayHi());
+  // }
+  // doMorningWork();      // 這段的結果為何？
+  // console.log(sayHi()); // 這段的結果又為何？
+
+  // 04 Hoisting 拆解練習
+  // // 創造
+  // function fn(params) {
+  //   if (!a) {
+  //     a = 2;
+  //   }
+  // }
+  // var a;
+
+  // // 執行
+  // fn()
+  // a = 1;
+  // console.log(a);
+
+  // 07 非同步範例
+  for (var i = 0; i < 3; i++) { // i === 3
+    setTimeout(function() {
+      console.log(i); // 請問 i 的值分別是多少？
+    }, 0);
+  }
+  </script>
+</body>
+
+</html>

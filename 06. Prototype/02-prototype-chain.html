@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+  var a = [1, 2, 3];
+  // console.log(a, a[1], a.length);
+  
+  // a.forEach(function(i) {
+  //   console.log(i);
+  // });
+
+  var b = [4, 5, 6];
+  a.__proto__.getLast = function () {
+    return this[this.length -1];
+  }
+  console.log(a, b);
+  console.log(a.getLast(), b.getLast());
+  
+  var family = {
+    name: '小明家'
+  }
+  family.__proto__.getName = function() {
+    return this.name;
+  }
+  console.log(family, family.getName());
+  
+  b.name = '陣列的屬性';
+  console.log(b.getName());
+  console.log(b.toString());
+  
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

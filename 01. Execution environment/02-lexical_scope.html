@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+
+// 語法作用域
+// function callName() {
+//   var Ming = '小明';
+// }
+// callName();
+// console.log(Ming);
+
+var value = 1;
+function fn1() {
+  console.log(value); // 語法作用域：1
+  // 動態作用域：2
+}
+function fn2() {
+  var value = 2;
+  fn1();
+}
+fn2();
+
+
+
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+
+    // 函式結構
+    // function afunction(parameter) {
+    //   var localVariable = '區域變數';
+    //   console.log(this, localVariable); // This、區域變數
+
+    //   return '附加一段' + parameter; // 回傳、參數
+    // }
+    // var data = afunction('參數');// 呼叫函式
+    // console.log(data);
+    
+    // 名稱
+    // function functionA() {
+    //   console.log('函式陳述式', '具名函式');
+    //   console.log(functionA);
+    // }
+    // functionA();
+
+    // var functionB = function() {
+    //   console.log('函式表達式', '匿名函式');
+    //   console.log(functionB);
+    // }
+    // functionB();
+
+    // var functionC = function functionD() {
+    //   console.log(functionC, functionD);
+    //   // 具名函式能夠在函式內被調用
+    // }
+    // functionC();
+    // console.log(functionC);
+
+    // var num = 1;
+    // var giveMeMoney = function giveMoreMoney(coin) {
+    //   num += 1;
+    //   console.log('執行 giveMeMoney', num, coin);
+    //   return coin > 100 ? coin : giveMoreMoney(num * coin);
+    // };
+
+    // console.log(giveMeMoney(30));
+
+    function callSomeone(fn) {
+      fn();
+      console.log(fn);
+      
+    }
+    callSomeone(function() { console.log('執行函式') });
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

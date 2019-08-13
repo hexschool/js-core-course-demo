@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+
+    // var a = 2 * 2 + 2 * 3;
+    // console.log(a);
+    
+    // // console.log(1 < 2 < 3);
+    // // console.log(3 > 2 > 1);
+    
+    // console.log(3 > 2);
+    // console.log(1 > 1);
+    // //
+
+
+    // var a = 1;
+    // var b = 2;
+    // a = b = 3;
+    // // 3 賦予至 b 的 “回傳結果”
+    // // b = 3;
+    // // a = b;
+    // console.log(a, b);
+
+    var b = {};
+    Object.defineProperty(b, 'a', {
+      value: 2,
+      writable: false
+    });
+    Object.defineProperty(b, 'b', {
+      value: 3,
+      writable: false
+    });
+
+    // b.a = 3; // 2
+    console.log(b);
+
+    var a = 3;
+
+    a = b.b = b.a = 1;
+    console.log(a)
+
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script>
+    // 1. 以下物件格式是否正確？如果不正確請調整為正確格式
+    // 2. 執行物件中的兩個函式
+    var person = {
+      name: '小明',
+      age: 32,
+      1: '2',
+      gender: 'male',
+      'interests': ['吃飯', '睡覺', '打動動'],
+      greeting: function () {
+        console.log('哈囉，你好');
+      },
+      '哈囉': function () {
+        console.log('我是小明')
+      }
+    };
+    // console.log(person);
+    // person.greeting();
+    // person['哈囉']();
+
+    // 運用以下陣列及 for 迴圈型式，執行上面的函式
+    // var personMethod = ['greeting', '哈囉'];
+
+    // for (var i = 0; i < personMethod.length; i ++) {
+    //   console.log(personMethod[i]);
+    //   person[personMethod[i]]();
+    // }
+    
+    // 說明最終結果，並解釋其流程
+    function changeName(data) {
+      data.name = '杰倫家';
+      return data;
+    }
+    var family = {
+      deposit: 100000,
+      name: '小明家',
+      members: {
+        father: '老爸',
+        mom: '老媽',
+        ming: '小明'
+      }
+    }
+    var family2 = jQuery.extend({}, changeName(family));
+    family2.members.jay = '杰倫';
+
+    // console.log('family.name', family.name)
+    // console.log('family.members.jay', family.members.jay);
+    // console.log(family === family2);
+    // console.log(family.members === family2.members);
+    console.log(family, family2);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
