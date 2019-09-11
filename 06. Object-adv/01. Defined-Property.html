@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+  var person = {
+    a: 1,
+    b: 2,
+    c: 3
+  }
+
+  console.log(person);
+
+  // Object.defineProperty
+  // 屬性，調整屬性的特徵
+  // 1. 值、 2. 可否寫入、3. 可否被刪除、4. 可否被列舉
+  Object.defineProperty(person, 'a', {
+    value: 4,
+    writable: false,
+    configurable: true,
+    enumerable: true
+  });
+
+  person.a = 5;
+
+  // (function() {
+  //   'use strict';
+  //   person.a = 5;
+  // }());
+
+  Object.defineProperty(person, 'b', {
+    configurable: false
+  });
+
+  // delete person.a;
+  delete person.b;
+
+  Object.defineProperty(person, 'c', {
+    enumerable: false
+  });
+
+  for (var key in person) {
+    console.log('列舉',  key)
+  }
+  
+  // 淺層保護
+  Object.defineProperty(person, 'd', {
+    value: {},
+    writable: false
+  });
+
+  person.d.a = 6
+
+  Object.defineProperties(person, {
+    a: {
+
+    },
+    b: {
+      
+    }
+  })
+
+
+
+
+  console.log(person);
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

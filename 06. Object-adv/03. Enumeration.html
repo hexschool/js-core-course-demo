@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+  function Person() { };
+  Person.prototype.name = '人類';
+  // Object.defineProperty(Person.prototype, 'name', {
+  //   enumerable: false
+  // })
+
+  var casper = new Person();
+  casper.a = undefined;
+
+  console.log(casper);
+
+  // console.log(casper.hasOwnProperty('a'));
+  // console.log(casper.hasOwnProperty('b'));
+  // console.log(casper.hasOwnProperty('name'));
+
+  for (const key in casper) {
+    if (casper.hasOwnProperty(key)) {
+      
+      
+    }
+  }
+
+  console.log(Object.getOwnPropertyDescriptor(casper.__proto__, 'name'))
+  console.log(Object.getOwnPropertyDescriptor(
+    casper.__proto__.__proto__,
+    'toString')
+  )
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

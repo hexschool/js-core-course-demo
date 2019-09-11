@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+    var person = {
+      a: 1,
+      b: 2,
+      c: {}
+    }
+
+    // 延伸的三個物件方法 preventExtensions、seal、Freeze
+    // 中文語意分別表示 防止擴充、封裝、凍結
+
+    // preventExtensions
+    // 防止擴充
+    // Object.preventExtensions(person);
+    // console.log('是否可被擴充', Object.isExtensible(person));
+    // console.log('person a 的屬性特徵', Object.getOwnPropertyDescriptor(person, 'a'));
+
+    // // 調整屬性
+    // person.a = 'a';
+
+    // // 新增屬性
+    // person.d = 'd';
+
+    // // 巢狀屬性調整
+    // person.c.a = 'ca';
+
+    // // 調整特徵
+    // Object.defineProperty(person, 'a', {
+    //   configurable: false
+    // });
+
+    // // 刪除
+    // delete person.b;
+
+    // // 結果
+    // console.log('person 物件', person);
+    // console.log('person a 屬性特徵(嘗試修改後)', Object.getOwnPropertyDescriptor(person, 'a'));
+
+
+    // seal
+    // 物件屬性無法新增刪除，也無法重新配置特徵，但是可以調整目前屬性值
+    // 物件會被加上 preventExtensions
+    // Object.seal(person);
+    // console.log('是否可被 封裝', Object.isSealed(person));
+    // console.log('person a 的屬性特徵', Object.getOwnPropertyDescriptor(person, 'a'));
+
+    // // 調整屬性
+    // person.a = 'a';
+
+    // // 新增屬性
+    // person.d = 'd';
+
+    // // 巢狀屬性調整
+    // person.c.a = 'ca';
+
+    // // 調整特徵
+    // Object.defineProperty(person, 'a', {
+    //   writable: false
+    // });
+
+    // // 刪除
+    // delete person.b;
+
+    // 結果
+    // console.log('person 物件', person);
+    // console.log('person a 屬性特徵(嘗試修改後)', Object.getOwnPropertyDescriptor(person, 'a'));
+
+    // freeze
+    // 物件會加上 seal，並且無法調整值
+    Object.freeze(person);
+    console.log('是否被凍結', Object.isFrozen(person));
+    console.log('person a 的屬性特徵', Object.getOwnPropertyDescriptor(person, 'a'));
+
+    // 調整屬性
+    person.a = 'a';
+
+    // 新增屬性
+    person.d = 'd';
+
+    // 巢狀屬性調整
+    person.c.a = 'ca';
+
+    // 調整特徵
+    // Object.defineProperty(person, 'a', {
+    //   configurable: true
+    // });
+
+    // 刪除
+    delete person.b;
+
+    // 結果
+    console.log('person 物件', person);
+    console.log('person a 屬性特徵(嘗試修改後)', Object.getOwnPropertyDescriptor(person, 'a'));
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

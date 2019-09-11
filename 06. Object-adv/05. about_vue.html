@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="add()">+</button>
+    <p>{{ num }}</p>
+  </div>
+  <script>
+
+
+  var app = new Vue({
+    el: '#app',
+    data: {
+      num: 1,
+      obj: {
+        objnum: 1
+      }
+    },
+    methods: {
+      add: function() {
+        this.num = this.num + 1;
+      }
+    },
+    mounted: function() {
+      console.log(this);
+    }
+  });
+  </script>
+</body>
+</html>
