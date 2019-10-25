@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // Hoisting
+
+    // console.log(Ming);
+    
+    // let Ming = '小明';
+
+    // {
+    //   // 創造
+    //   let Ming; // 暫時性死區 TDZ
+
+    //   // 執行
+    //   console.log(Ming); // 小明
+    //   let Ming = '杰倫';
+    // }
+
+    // 1. let 一樣會有創造階段
+    // 2. 但從創造到實際宣告的階段會出現 TDZ，這個區域無法呼叫變數
+    // 3. 有創造到執行的概念，但不會預先出現 undefined 而是出現錯誤提示
+    // (文件不會表明這與 var 的 Hoisting 相同)
+
+    // console.log(a);
+    console.log(typeof a);
+    console.log(typeof myName);
+
+    let myName = '';
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
