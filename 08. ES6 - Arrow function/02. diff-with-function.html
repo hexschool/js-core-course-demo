@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>這裡具有一段話</p>
+  <script>
+
+    // # 沒有 arguments 參數
+    // 將以下改寫成 Arrow Function，並觀察差異
+    // const nums = (...arg) => {
+    //   console.log(arg);
+    // }
+    // nums(10, 50, 100, 50, 5, 1, 1, 1, 500);
+
+
+    // # This 綁定的差異
+    // 箭頭函式沒有自己的 This
+    // var myName = '全域'
+    // var person = {
+    //   myName: '小明',
+    //   callName: () => { 
+    //     console.log('1', this.myName); // 1 小明
+    //     setTimeout(() => {
+    //       console.log('2', this.myName); // 2 全域
+    //       console.log('3', this);
+    //     }, 10);
+    //   },
+    // }
+    // person.callName();
+
+    // # this 不同，導致 DOM 的 this 也會指向不同位置
+    // const ele = document.querySelector('p');
+    // ele.addEventListener('click', () => {
+    //   console.log(this)
+    // });
+
+    // # 也無法透過 call, apply, bind 重新給予 this
+    // const family = {
+    //   myName: '小明家',
+    // }
+    // const fn = (para1, para2) =>  {
+    //   console.log(this, para1, para2);
+    // }
+    // fn.call(family, '小明', '杰倫');
+
+    const Fn = function (a) {
+      this.name = a;
+    }
+
+    const ArrowFn = (a) => {
+      this.name = a;
+    }
+
+    console.log(Fn.prototype, ArrowFn.prototype);
+
+    const a = new Fn('a');
+    console.log(a);
+
+    const b = new ArrowFn('b');
+    
+  </script>
+</body>
+
+</html>

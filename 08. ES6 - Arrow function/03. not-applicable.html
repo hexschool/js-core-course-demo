@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 常見錯誤
+
+    // const arrFn = ()=> ({data: 1});
+    // console.log(arrFn())
+
+    // let num = 0;
+
+    // const numFn = num || function () { return 1 };
+    // const numFn = num || (() => 1);
+    // console.log(numFn());
+
+    // const person = {
+    //   myName: '小明',
+    //   callName: function () {
+    //     console.log(this.myName);
+    //   },
+    // }
+    // person.callName();
+
+    // const app = new Vue({
+    //   data: {
+    //     num: 1
+    //   },
+    //   created: ()=> {
+    //     console.log(this.num)
+    //   }
+    // })
+
+    const Fn2 = function (a) {
+      this.name = a;
+    }
+    Fn2.prototype.protoFn = () => {
+      return this;
+    }
+
+    const newObj = new Fn2('函式');
+    console.log(newObj.protoFn());
+    
+  </script>
+</body>
+
+</html>

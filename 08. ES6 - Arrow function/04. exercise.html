@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 搭配陣列方法
+    // 陣列雙倍
+    // 參考：https://wcc723.github.io/javascript/2017/06/29/es6-native-array/
+    // const arr = [15, 12, 63, 67, 1421, 124, 567, 235, 12, 45];
+    // const arrDouble = arr.map(function(num) {
+    //   return num * 2;
+    // })
+    // const arrDouble = arr.map(num => num * 2);
+    // console.log(arrDouble);
+
+    // 平均數
+    // const average = function () {
+    //   const nums = Array.from(arguments);
+    //   const total = nums.reduce(function (acc, val) {
+    //     return acc + val
+    //   }, 0);
+    //   console.log(total);
+
+    //   return total / nums.length;
+    // }
+    // const average = (...num) => num.reduce((acc, val) => acc + val, 0) / num.length;
+    // console.log(average(1, 2, 3, 4, 5, 10));
+
+    // 方法參考：https://30secondsofknowledge.com/
+
+
+
+    // 物件內 this
+    const person = {
+      data: {
+      },
+      getData: function() {
+        // const vm = this;
+        $.ajax({
+          url: 'https://randomuser.me/api/',
+          dataType: 'json',
+          success: (data) => {
+            console.log(data);
+            this.data = data.results[0];
+            console.log('person.data', person.data);
+          }
+        });
+      }
+    }
+    person.getData();
+  </script>
+</body>
+
+</html>
