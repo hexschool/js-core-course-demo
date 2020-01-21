@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="list">
+  </div>
+  <script>
+    // 樣板字面值（Template literals）
+    // 先行版本（Template String）
+
+    // const cash = 10;
+    // const string = '';
+    // // const sentence = '我的 ' + cash + ' 元掉到水溝裡了，真是' + string;
+    // const sentence = `我的 ${ cash } 元掉到水溝裡了，真是${ string || '好生氣啊' }`;
+    // console.log(sentence);
+
+    const people = [
+      {
+        name: '小明',
+        cash: 50
+      },
+      {
+        name: '阿姨',
+        cash: 5000
+      },
+      {
+        name: '杰倫',
+        cash: 10000
+      }
+    ];
+
+    const listString = `<ul>
+      <li>我是 ${ people[0].name }，身上有 ${ people[0].cash }元</li>
+      <li>我是 XXX，身上有多少元</li>
+      <li>我是 XXX，身上有多少元</li>
+    </ul>`;
+
+    console.log(listString);
+    document.querySelector('#list').innerHTML = listString;
+
+
+
+  </script>
+</body>
+
+</html>

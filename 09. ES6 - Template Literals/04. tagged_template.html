@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="message"></div>
+  <script>
+    // 標籤樣板字面值
+    // function showConsole(strings, ...arg) {
+    //   console.log(strings, arg)
+    // }
+    // const myName = '小明';
+
+    // showConsole`您好 ${myName}，餐點已經準備好囉！ ${2} ${ 3 }`;
+
+    // const myName = '小明';
+    // const highlight = (strings, ...arg) =>
+    //   strings.map((str, i) => `${str}${arg[i] ? `<span>${arg[i]}</span>`: ''}`).join('');
+    // const sentence = highlight`您好 ${myName}，餐點已經準備好囉！`;
+    // // 您好 <span> 小明 </span > ，餐點已經準備好囉！
+    // console.log(sentence)
+
+    // const messageName = '小明';
+    const messageName = '<img onload="fetch(\'https://randomuser.me/api/\')" src="https://images.unsplash.com/photo-1577527662848-3ed9b134813c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">'
+    document.querySelector('#message').innerHTML = convertHTML`<p>${messageName} 傳來一則訊息</p>`
+    
+    function convertHTML(strings, ...keys) {
+      return strings.map((str, i) =>
+        `${str}${keys[i] ? `${keys[i]
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')}` : ''}`
+      ).join('');
+    }
+  </script>
+</body>
+
+</html>

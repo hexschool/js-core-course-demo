@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="list"></div>
+  <script>
+    // `string text ${expression} string text`
+    // const person = {
+    //   name: '小明',
+    //   cash: 1000
+    // }
+    // // const sentence = `我是${person.name}，身上帶有 ${ ((c) => c * 2)(person.cash) } 元`;
+    // const sentence = `我是${person.name}，${ `身上帶有 ${ person.cash }` } 元`;
+    // console.log(sentence);
+
+    const people = [
+      {
+        name: '小明',
+        cash: 50
+      },
+      {
+        name: '阿姨',
+        cash: 5000
+      },
+      {
+        name: '杰倫',
+        cash: 10000
+      }
+    ];
+
+    const listString = `<ul>
+      ${ people.map((person) => `<li>我是 ${person.name}，身上有 ${person.cash } 元</li>`).join('')}
+    </ul>`;
+    console.log(listString)
+
+    document.querySelector('#list').innerHTML = listString;
+  </script>
+</body>
+
+</html>
