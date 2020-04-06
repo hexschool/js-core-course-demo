@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+  <script>
+    const url = 'https://randomuser.me/api/';
+
+    // let data = {};
+
+    // $.ajax({
+    //   url: url,
+    // }).done(function (res) {
+    //   // console.log(res);
+    //   const seed = res.info.seed;
+    //   console.log(seed, res);
+    //   $.ajax({
+    //     url: `${url}?seed=${seed}`,
+    //   }).done(function(res2) {
+    //     console.log(res2);
+    //   })
+    // });
+
+    // 常見的非同步問題（不限於 Ajax）
+    // 1. 回呼地獄
+    // 2. 寫法不一致
+    // 3. 無法同時執行（jQuery 有並行寫法，但不直覺）
+
+    // axios.get(url)
+    //   .then((res) => {
+    //     console.log(1, res)
+    //     const seed = res.data.info.seed;
+    //     return axios.get(`${url}?seed=${seed}`)
+    //   })
+    //   .then((res) => {
+    //     console.log(2, res)
+    //   });
+
+    Promise.all([axios.get(url), axios.get(url)])
+      .then(([res1, res2]) => {
+        console.log(res1, res2)
+      })
+
+
+
+  </script>
+</body>
+
+</html>

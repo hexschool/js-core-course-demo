@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // const a = new Promise((resolve, reject) => {
+    //   reject('fail')
+    // });
+    
+    // console.log(a);
+    // a.then((res)=> {
+    //   console.log(res)
+    // }).catch((res) => {
+    //   console.log(res)
+    // })
+
+
+    function promiseFn(num) {
+      console.log(1)
+      return new Promise((resolve, reject) => {
+        console.log(2)
+        setTimeout(() => {
+          if (num) {
+            resolve('成功');
+          } else {
+            reject('失敗')
+          }
+        }, 0);
+      })
+    }
+
+    promiseFn(0)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(res => {
+        console.log('catch', res);
+      })
+    
+    console.log('程式碼結束')
+
+    // const promiseFn2 = () => {
+    //   return new Promise((resolve, reject) => {
+
+    //   })
+    // } 
+
+
+  </script>
+</body>
+
+</html>

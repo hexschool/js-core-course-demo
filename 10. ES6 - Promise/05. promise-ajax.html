@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    var url = 'https://jsonplaceholder.typicode.com/todos/1';
+
+    // 定義 Http request(Web API)
+  //   var req = new XMLHttpRequest();
+
+  //   // 定義方法
+  //   req.open('GET', url);
+
+  //   // 當請求完成，則進行函式的結果
+  //   req.onload = function () {
+  //     if (req.status == 200) {
+  //       // 成功直接列出結果
+  //       console.log(req.response);
+  //     } else {
+  //       // 失敗的部分
+  //     }
+  //   };
+
+  // // 送出請求
+  // req.send();
+
+    function get(url) {
+      return new Promise((resolve, reject) => {
+        var req = new XMLHttpRequest();
+
+        // 定義方法
+        req.open('GET', url);
+
+        // 當請求完成，則進行函式的結果
+        req.onload = function () {
+          if (req.status == 200) {
+            // 成功直接列出結果
+            resolve(req.response);
+            // console.log(req.response);
+          } else {
+            // 失敗的部分
+            reject(req);
+          }
+        };
+
+        // 送出請求
+        req.send();
+      })
+    }
+
+    get(url)
+      .then(res => {
+        console.log('get', res)
+        return get(url);
+      })
+      .then(res => {
+        console.log('get2', res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+
+  </script>
+</body>
+
+</html>

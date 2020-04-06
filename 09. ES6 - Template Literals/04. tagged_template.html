@@ -29,7 +29,9 @@
     // const messageName = '小明';
     const messageName = '<img onload="fetch(\'https://randomuser.me/api/\')" src="https://images.unsplash.com/photo-1577527662848-3ed9b134813c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">'
     document.querySelector('#message').innerHTML = convertHTML`<p>${messageName} 傳來一則訊息</p>`
-    
+    // document.querySelector('#message').textContent = messageName
+    // <img onload="fetch('https://randomuser.me/api/')" src="https://images.unsplash.com/photo-1577527662848-3ed9b134813c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"> 傳來一則訊息
+    // <img onload="fetch('https://randomuser.me/api/')" src="https://images.unsplash.com/photo-1577527662848-3ed9b134813c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80">
     function convertHTML(strings, ...keys) {
       return strings.map((str, i) =>
         `${str}${keys[i] ? `${keys[i]

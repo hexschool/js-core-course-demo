@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    function promiseFn(num, time = 500) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (num) {
+            resolve(`成功 ${num}`);
+          } else {
+            reject('失敗');
+          }
+        }, time);
+      });
+    }
+
+    // promiseFn(1, 2000)
+    //   .then(res => {
+    //     console.log(res)
+    //   });
+
+    // Promise.all([
+    //   promiseFn(1, 500),
+    //   promiseFn(0, 1000),
+    //   promiseFn(3, 2000)
+    // ])
+    //   .then(res => {
+    //     console.log(res[0], res[1], res[2])
+    //   })
+    //   .catch(res => {
+    //     console.log(res);
+    //   })
+
+    Promise.race([
+      promiseFn(1, 500),
+      promiseFn(0, 300),
+      promiseFn(3, 2000)
+    ])
+      .then(res => {
+        console.log(res)
+      })
+      .catch(res => {
+        console.log(res);
+      })
+
+  </script>
+</body>
+
+</html>
