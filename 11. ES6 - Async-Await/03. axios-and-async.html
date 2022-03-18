@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      // https://jsonplaceholder.typicode.com/todos/2
+
+      // axios
+      //   .get('https://jsonplaceholder.typicode.com/todo/2')
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+      
+      // Promise.all([
+      //   axios.get('https://jsonplaceholder.typicode.com/todos/1'),
+      //   axios.get('https://jsonplaceholder.typicode.com/todos/2')
+      // ])
+      //   .then(res => {
+      //     console.log(res);
+      //   })
+
+      const getData = async () => {
+        try {
+          const res = await Promise.all([
+            axios.get('https://jsonplaceholder.typicode.com/todos/1'),
+            axios.get('https://jsonplaceholder.typicode.com/todos/2')
+          ])
+          return res;
+        } catch (error) {
+          // console.log('錯誤:', error);
+          throw new Error(error);
+        }
+      }
+      
+      // getData().then(res => {
+      //   console.log(res);
+      // })
+      (async () => {
+        const res = await getData();
+        console.log(res);
+      })();
+    </script>
+  </body>
+</html>
