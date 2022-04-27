@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function Animal(family) {
+      //   this.kingdom = '動物界';
+      //   this.family = family || '人科';
+      // }
+      // Animal.prototype.move = function() {
+      //   console.log(`${this.name} 在走`);
+      // }
+
+      // function Dog(name, color, size) {
+      //   Animal.call(this, '狗科');
+      //   this.name = name;
+      //   this.color = color || '白色';
+      //   this.size = size || '小'
+      // }
+      // Dog.prototype = Object.create(Animal.prototype);
+      // Dog.prototype.constructor = Dog;
+      // Dog.prototype.bark = function () {
+      //   console.log(`${this.name} 正在叫`);
+      // }
+
+      // const Bibi = new Dog('小比', '棕色', '小');
+      // console.log(Bibi);
+      // Bibi.bark();
+      // Bibi.move();
+
+      class Animal {
+        constructor(family) {
+          this.kingdom = '動物界';
+          this.family = family || '人科';
+        }
+
+        move() {
+          console.log(`${this.name} 移動`);
+        }
+      }
+
+      class Dog extends Animal {
+        constructor(name, color, size) {
+          super('狗科');
+          this.name = name;
+          this.color = color;
+          this.size = size;
+        }
+
+        bark() {
+          console.log(`${this.name} 吼叫`);
+        }
+      }
+
+      const Bibi = new Dog('小比', '棕色', '小');
+      console.log(Bibi);
+      Bibi.bark();
+      Bibi.move();
+    </script>
+  </body>
+</html>

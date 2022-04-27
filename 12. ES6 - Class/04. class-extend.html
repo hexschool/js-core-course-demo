@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = [
+        {
+          name: 'Casper',
+          like: '鍋燒意麵',
+          age: 20,
+        },
+        {
+          name: 'Wang',
+          like: '炒麵',
+          age: 24,
+        },
+        {
+          name: 'Ray',
+          like: '泡菜',
+          age: 28,
+        },
+        {
+          name: '滷蛋',
+          like: '狗糧',
+          age: 10,
+        },
+        {
+          name: '漂亮阿姨',
+          like: '美妝',
+          age: 19,
+        },
+      ];
+
+      class CustomArray extends Array {
+        constructor(items) {
+          super(...items)
+        }
+
+        sumValues(field) {
+          return this.reduce((pre, current) => pre + current[field], 0);
+        }
+
+        sortBy(field, ascending = true) {
+          return this.sort((a, b) => ascending ? a[field] - b[field] : b[field] - a[field])
+        }
+      }
+
+      const newData = new CustomArray(data);
+      // newData.forEach(item => console.log(item));
+      newData.sumValues('age');
+      console.log(newData.sumValues('age'));
+
+      console.log(newData.sortBy('age', false));
+
+      // console.log(newData);
+      
+
+    </script>
+  </body>
+</html>

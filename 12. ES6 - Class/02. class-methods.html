@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Calculator {
+        subtotal = 0;
+        total = 0;
+        serviceFee = 0.05;
+        #shopName = '卡斯伯商行';
+        constructor(items) {
+          this.items = items;
+          this.orderName = this.items[0].name;
+        }
+
+        addNoddles() {
+          this.items.push({
+            name: '加麵',
+            price: 20,
+          });
+        }
+
+        sum() {
+          this.subtotal = this.items.reduce((pre, current) => {
+            return pre + current.price;
+          }, 0)
+        }
+
+        withServiceFee() {
+          this.sum();
+          this.total = Math.round(this.subtotal * (1 + this.serviceFee));
+        }
+
+        createOrder() {
+          this.withServiceFee();
+          this.orderName = `${this.#shopName} - ${this.items[0].name}`
+        }
+
+        set fee(val) {
+          console.log('fee:', val);
+          // subtotal 小計的費用，來計算新的服務費
+          this.sum();
+          this.serviceFee = (val / this.subtotal).toFixed(3) * 1;
+        }
+        get fee() {
+          return Number.parseInt(this.subtotal * this.serviceFee);
+        }
+
+        // Class 是否可以提供直接取用的方法
+        // 靜態方法(不能調用 this)
+        static add(a, b) {
+          return a + b;
+        }
+        static className = '卡斯伯棒棒的 Class'
+      }
+
+      console.log(Calculator.add(1, 2));
+      console.log(Calculator.className);
+
+      // const order = new Calculator([
+      //   {
+      //     name: '鍋燒意麵',
+      //     price: 150,
+      //   },
+      // ]);
+      // order.addNoddles();
+
+      // // class 內的變數
+      // // order.sum();
+      
+
+      // // console.log(order.#shopName);
+
+      // // get, setter
+      // order.fee = 20;
+      // console.log(order.fee);
+      // order.createOrder();
+
+      // // order.add(1, 2)
+
+      // console.log(order);
+
+
+    </script>
+  </body>
+</html>

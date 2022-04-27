@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = [
+        {
+          name: 'Casper',
+          like: '鍋燒意麵',
+          age: 20,
+        },
+        {
+          name: 'Wang',
+          like: '炒麵',
+          age: 24,
+        },
+        {
+          name: 'Ray',
+          like: '泡菜',
+          age: 28,
+        },
+        {
+          name: '滷蛋',
+          like: '狗糧',
+          age: 10,
+        },
+        {
+          name: '漂亮阿姨',
+          like: '美妝',
+          age: 19,
+        },
+      ];
+
+      class DataFilter {
+        constructor(items) {
+          this.items = items;
+        }
+
+        filterItems(property, val) {
+          this.items = this.items.filter((item) => item[property] >= 20);
+          return this;
+        }
+
+        sortItems(sortBy) {
+          // sort 是會改變原始值
+          this.items.sort((a, b) => b[sortBy] - a[sortBy]);
+          return this;
+        }
+
+        // 其餘參數
+        limitFields(...fields) {
+          this.items = this.items.map((item) => {
+            Object.keys(item).forEach((key) => {
+              if (!fields.includes(key)) {
+                delete item[key];
+              }
+            });
+            return item;
+          });
+          return this;
+        }
+      }
+
+      const newData = new DataFilter(data);
+
+      // 過濾出符合條件的特定項目 age
+      newData
+        .filterItems('age', 20)
+        .sortItems('age')
+        .limitFields('name', 'like');
+
+      console.log(newData);
+    </script>
+  </body>
+</html>
